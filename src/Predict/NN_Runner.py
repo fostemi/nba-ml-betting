@@ -1,7 +1,9 @@
 import copy
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
 from colorama import Fore, Style, init, deinit
+import keras
+# from keras import load_model
 from keras.models import load_model
 from src.Utils import Expected_Value
 from src.Utils import Kelly_Criterion as kc
@@ -14,7 +16,7 @@ _ou_model = None
 def _load_models():
     global _model, _ou_model
     if _model is None:
-        _model = load_model('Models/NN_Models/Trained-Model-ML-1699315388.285516')
+        _model = load_model('Models/NN_Models/Trained-Model-ML-1739236209.323982.keras')
     if _ou_model is None:
         _ou_model = load_model("Models/NN_Models/Trained-Model-OU-1699315414.2268295")
 
@@ -30,7 +32,7 @@ def nn_runner(data, todays_games_uo, frame_ml, games, home_team_odds, away_team_
     frame_uo['OU'] = np.asarray(todays_games_uo)
     data = frame_uo.values
     data = data.astype(float)
-    data = tf.keras.utils.normalize(data, axis=1)
+    data = keras.utils.normalize(data, axis=1)
 
     ou_predictions_array = []
 
