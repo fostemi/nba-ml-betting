@@ -3,8 +3,12 @@ version: "3"
 tasks:
   dk.xgb.run:
     cmds:
-      python3 main.py -xgb -odds=draftkings
+    - python3 main.py -xgb -odds=draftkings
 
   fd.xgb.run:
     cmds:
-      python3 main.py -xgb -odds=fanduel
+    - python3 main.py -xgb -odds=fanduel
+
+  dk.nn.run:
+    cmds:
+    - python3 main.py -nn -odds=fanduel
