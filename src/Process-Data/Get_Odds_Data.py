@@ -7,18 +7,20 @@ from datetime import datetime, timedelta
 
 import pandas as pd
 import toml
-from sbrscrape import Scoreboard
+
+# from hack import Scoreboard
+from Scoreboard import Scoreboard
 
 # TODO: Add tests
 
 sys.path.insert(1, os.path.join(sys.path[0], '../..'))
 
-sportsbook = 'fanduel'
+sportsbook = 'draftkings'
 df_data = []
 
-config = toml.load("config.toml")
+config = toml.load("../../config.toml")
 
-con = sqlite3.connect("Data/OddsData.sqlite")
+con = sqlite3.connect("../../Data/OddsData.sqlite")
 
 for key, value in config['get-odds-data'].items():
     date_pointer = datetime.strptime(value['start_date'], "%Y-%m-%d").date()

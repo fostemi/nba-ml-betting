@@ -1,7 +1,7 @@
 import copy
 
 import numpy as np
-import pandas as pd
+# import pandas as pd
 import xgboost as xgb
 from colorama import Fore, Style, init, deinit
 from src.Utils import Expected_Value
@@ -14,7 +14,7 @@ init()
 xgb_ml = xgb.Booster()
 xgb_ml.load_model('Models/XGBoost_Models/XGBoost_69.0%_ML-4.json')
 xgb_uo = xgb.Booster()
-xgb_uo.load_model('Models/XGBoost_Models/XGBoost_53.5%_UO-9.json')
+xgb_uo.load_model('Models/XGBoost_Models/XGBoost_54.6%_UO-9.json')
 
 
 def xgb_runner(data, todays_games_uo, frame_ml, games, home_team_odds, away_team_odds, kelly_criterion):
