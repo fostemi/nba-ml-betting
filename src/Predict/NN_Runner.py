@@ -4,21 +4,21 @@ import numpy as np
 from colorama import Fore, Style, init, deinit
 import keras
 # from keras import load_model
-from keras.models import load_model
+# from keras.saving import load_model
 from src.Utils import Expected_Value
 from src.Utils import Kelly_Criterion as kc
 
 init()
 
-_model = None
-_ou_model = None
+_model = keras.saving.load_model('Models/NN_Models/Trained-Model-ML-1739236209.323982.keras')
+_ou_model = keras.saving.load_model("Models/NN_Models/Trained-Model-OU-1739417256.470243.keras")
 
 def _load_models():
     global _model, _ou_model
     if _model is None:
-        _model = load_model('Models/NN_Models/Trained-Model-ML-1739236209.323982.keras')
+        _model = keras.saving.load_model('Models/NN_Models/Trained-Model-ML-1739236209.323982.keras')
     if _ou_model is None:
-        _ou_model = load_model("Models/NN_Models/Trained-Model-OU-1699315414.2268295")
+        _ou_model = keras.saving.load_model("Models/NN_Models/Trained-Model-OU-1739417256.470243.keras")
 
 def nn_runner(data, todays_games_uo, frame_ml, games, home_team_odds, away_team_odds, kelly_criterion):
     _load_models()

@@ -17,6 +17,7 @@ url = config['data_url']
 con = sqlite3.connect("../../Data/TeamData.sqlite")
 
 for key, value in config['get-data'].items():
+    print(key)
     date_pointer = datetime.strptime(value['start_date'], "%Y-%m-%d").date()
     end_date = datetime.strptime(value['end_date'], "%Y-%m-%d").date()
 
