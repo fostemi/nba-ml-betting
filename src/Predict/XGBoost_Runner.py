@@ -1,7 +1,7 @@
 import copy
 
 import numpy as np
-# import pandas as pd
+import pandas as pd
 import xgboost as xgb
 from colorama import Fore, Style, init, deinit
 from src.Utils import Expected_Value
@@ -12,7 +12,7 @@ from src.Utils import Kelly_Criterion as kc
 # from src.Utils.tools import get_json_data, to_data_frame, get_todays_games_json, create_todays_games
 init()
 xgb_ml = xgb.Booster()
-xgb_ml.load_model('Models/XGBoost_Models_New_Data/XGBoost_68.4%_ML-4.json')
+xgb_ml.load_model('Models/XGBoost_Models_New_Data/XGBoost_68.7%_ML-4.json')
 xgb_uo = xgb.Booster()
 xgb_uo.load_model('Models/XGBoost_Models/XGBoost_54.6%_UO-9.json')
 

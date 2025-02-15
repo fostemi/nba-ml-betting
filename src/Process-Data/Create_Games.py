@@ -60,9 +60,9 @@ for key, value in config['create-games'].items():
             elif season == '2008-09' or season == "2009-10" or season == "2010-11" or season == "2011-12":
                 home_team_series = team_df.iloc[team_index_08.get(home_team)]
                 away_team_series = team_df.iloc[team_index_08.get(away_team)]
-            elif season == "2012-13":
-                home_team_series = team_df.iloc[team_index_12.get(home_team)]
-                away_team_series = team_df.iloc[team_index_12.get(away_team)]
+            # elif season == "2012-13":
+            #     home_team_series = team_df.iloc[team_index_12.get(home_team)]
+            #     away_team_series = team_df.iloc[team_index_12.get(away_team)]
             elif season == '2013-14':
                 home_team_series = team_df.iloc[team_index_13.get(home_team)]
                 away_team_series = team_df.iloc[team_index_13.get(away_team)]
